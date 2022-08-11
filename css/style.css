@@ -207,3 +207,47 @@ input::-webkit-search-cancel-button {
   border-radius: 6px;
   width: fit-content;
 }
+
+#login {
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+.login {
+  border: 1px solid #feae36;
+  display: flex;
+  border-radius: 6px;
+}
+
+.login-conteudo {
+  width: 620px;
+  display: grid;
+  place-content: center;
+  margin: 0 auto;
+  padding-bottom: 60px;
+  padding-top: 30px;
+}
+
+.login-conteudo h1 {
+  margin-bottom: 30px;
+  font-family: "Work Sans", sans-serif;
+  font-weight: bold;
+  font-size: 48px;
+  color: #363636;
+}
+
+.login-conteudo button {
+  background-color: #feae36;
+  border: 1px solid #feae36;
+  color: #363636;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px 40px;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.login-conteudo .form-input {
+  width: 300px;
+}
