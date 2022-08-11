@@ -213,28 +213,32 @@ input::-webkit-search-cancel-button {
   height: 100vh;
   place-content: center;
 }
-
-.login {
-  border: 1px solid #feae36;
+#login {
   display: flex;
-  border-radius: 6px;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
-.login-conteudo {
+.login {
+  padding: 60px;
+  border: 1px solid #feae36;
+  border-radius: 6px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
   width: 620px;
-  display: grid;
-  place-content: center;
-  margin: 0 auto;
-  padding-bottom: 60px;
-  padding-top: 30px;
 }
 
 .login-conteudo h1 {
-  margin-bottom: 30px;
   font-family: "Work Sans", sans-serif;
-  font-weight: bold;
   font-size: 48px;
   color: #363636;
+  margin-bottom: 30px;
+}
+
+.login-conteudo .form-input {
+  width: 300px;
 }
 
 .login-conteudo button {
@@ -246,8 +250,4 @@ input::-webkit-search-cancel-button {
   padding: 10px 40px;
   border-radius: 6px;
   width: fit-content;
-}
-
-.login-conteudo .form-input {
-  width: 300px;
 }
