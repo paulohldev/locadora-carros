@@ -1,7 +1,9 @@
 var express = require("express");
 var router = express.Router();
+var dao = require("../database/dao");
 
 router.get("/", function (req, res) {
+  dao.list();
   res.render("veiculos/home");
 });
 
