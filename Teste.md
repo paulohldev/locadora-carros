@@ -1,1 +1,0 @@
-Testando o modo colaborador
