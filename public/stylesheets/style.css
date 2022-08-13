@@ -1,7 +1,8 @@
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  color: #161616;
   font-family: "Inter", sans-serif;
 }
 
@@ -9,155 +10,88 @@ a {
   text-decoration: none;
 }
 
-button {
-  cursor: pointer;
-}
-
-ul {
-  list-style: none;
-}
-
 .container {
-  max-width: 940px;
   margin: 0 auto;
+  max-width: 1200px;
+  padding: 40px 20px;
 }
 
-h1 a {
-  font-family: "Work Sans", sans-serif;
-  color: #feae36;
+.header-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-h1 {
-  margin-top: 20px;
+.header-menu h1 {
+  font-size: 32px;
 }
 
-.search-cadastro {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-form input {
+.header-menu input {
   padding: 10px 20px;
   border: 1px solid #feae36;
-  border-radius: 6px 0px 0px 6px;
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
-  color: #363636;
+  border-radius: 4px;
   outline-color: #feae36;
 }
 
-#home form button {
-  padding: 10px;
+.btn {
   background-color: #feae36;
-  border: 1px solid #feae36;
-  color: #363636;
-  font-family: "Inter", sans-serif;
+  color: #161616;
+  padding: 10px 20px;
+  border-radius: 0px 4px 4px 0px;
   font-weight: bold;
-  font-size: 14px;
-  border-radius: 0px 6px 6px 0px;
-  position: relative;
-  right: 10px;
 }
 
-input::-webkit-search-cancel-button {
+.form-search {
+  position: relative;
+}
+
+.btn.search {
+  border: 1px solid #feae36;
+  position: absolute;
+  right: -80px;
+  height: 100%;
+  /* bottom: 1px; */
+}
+
+a.btn {
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.header-menu input::-webkit-search-cancel-button {
   display: none;
 }
 
-.search-cadastro > a {
-  background-color: #feae36;
-  border: 1px solid #feae36;
-  color: #363636;
-  font-weight: bold;
-  font-size: 14px;
-  padding: 10px 20px;
-  border-radius: 6px;
+.veiculos table {
+  border-spacing: 0px;
+  width: 100%;
+  margin-top: 60px;
 }
 
-.veiculos {
+.veiculos tr {
+  text-align: center;
+}
+
+.veiculos tbody tr:nth-child(2n + 1) {
+  background-color: #ffe2b7;
+}
+
+.veiculo-icons {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.veiculo-box {
-  border: 1px solid #feae36;
-  padding: 20px;
-  border-radius: 6px;
-}
-
-.veiculo-box p {
-  color: #363636;
-  margin-bottom: 20px;
-  font-size: 14px;
-}
-
-.veiculo-box li {
-  line-height: 1.7;
-  color: #363636;
-}
-
-.veiculo-box:hover {
-  box-shadow: 1px 1px 5px #feae36;
-}
-
-.icones {
-  display: flex;
-  gap: 20px;
-}
-
-.icones .delete,
-.icones .edit {
-  width: 24px;
-  transition: transform 0.2s;
-}
-
-.icones .delete:hover {
-  transform: rotate(90deg);
-}
-
-.veiculo-header {
-  display: flex;
-  justify-content: space-between;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
   align-items: center;
 }
 
-.veiculo-marca {
-  margin-bottom: 14px;
-  display: flex;
-  gap: 20px;
-  font-size: 12px;
-  color: #828181;
-  margin-top: 4px;
+.veiculo-icons button {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-.veiculo-marca li:nth-child(n + 2)::before {
-  content: "";
-  display: inline-block;
-  width: 12px;
-  height: 1px;
-  background-color: #feae36;
-  position: relative;
-  bottom: 4px;
-  right: 10px;
-}
-
-.veiculo-caracteristica {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.veiculo-caracteristica h4 {
-  color: #feae36;
-  margin-bottom: 8px;
-  line-height: 1;
-  font-size: 16px;
-}
-
-.veiculo-motorizacao,
-.veiculo-acessorios {
-  font-size: 14px;
+.veiculo-icons .icon img {
+  width: 28px;
+  padding: 10px 0px;
 }
 
 .container-form {
@@ -183,6 +117,16 @@ input::-webkit-search-cancel-button {
   gap: 0px 20px;
 }
 
+form input {
+  padding: 10px 20px;
+  border: 1px solid #feae36;
+  border-radius: 6px 0px 0px 6px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #363636;
+  outline-color: #feae36;
+}
+
 .form-input label {
   font-weight: 600;
   color: #363636;
@@ -198,50 +142,6 @@ input::-webkit-search-cancel-button {
 }
 
 #cadastro form button {
-  background-color: #feae36;
-  border: 1px solid #feae36;
-  color: #363636;
-  font-weight: bold;
-  font-size: 14px;
-  padding: 10px 40px;
-  border-radius: 6px;
-  width: fit-content;
-}
-
-#login {
-  display: grid;
-  height: 100vh;
-  place-content: center;
-}
-#login {
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-}
-
-.login {
-  padding: 60px;
-  border: 1px solid #feae36;
-  border-radius: 6px;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: center;
-  width: 620px;
-}
-
-.login-conteudo h1 {
-  font-family: "Work Sans", sans-serif;
-  font-size: 48px;
-  color: #363636;
-  margin-bottom: 30px;
-}
-
-.login-conteudo .form-input {
-  width: 300px;
-}
-
-.login-conteudo button {
   background-color: #feae36;
   border: 1px solid #feae36;
   color: #363636;

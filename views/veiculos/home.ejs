@@ -3,52 +3,44 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 
 <body>
 
 
   <div class="container">
-    <nav class="navbar navbar-light">
 
-      <a class="col-2 navbar-brand" href="#">
-        <img src="" width="50%" alt="">
-      </a>
-      <h1 class="col-4">Lista de Veículos</h1>
-
-      <form method="get" class="col-4 row" action="/veiculos/search">
-        <div class="col-auto">
-          <input type="search" name="nome" class="form-control" placeholder="Buscar">
-        </div>
-        <button type="submit" class="col-auto btn btn-primary"><i class="bi bi-search"></i></button>
+    <header class="header-menu">
+      <h1>Lista de Veículos</h1>
+      <form class="form-search" method="get" action="/veiculos/search">
+        <input type="search" name="nome" placeholder="Buscar">
+        <button class="btn search" type="submit">buscar</button>
       </form>
+      <a class="btn" href="/veiculos/cadastro">novo</a>
+    </header>
 
-      <a href="/veiculos/cadastro" class="col-1 btn btn-primary">Novo <i class="bi bi-plus-lg"></i></a>
-    </nav>
-    <div class="row">
+    <div class="veiculos">
 
       <% if (locals.messages.success) { %>
-            <div class="alert alert-success" role="alert">
-            <%= locals.messages.success %>
-            </div>
-      <% } %>
+        <div class="alert alert-success" role="alert">
+          <%= locals.messages.success %>
+        </div>
+        <% } %>
 
-      <% if (locals.messages.error) { %>
+          <% if (locals.messages.error) { %>
             <div class="alert alert-danger" role="alert">
               <%= locals.messages.error %>
             </div>
-      <% } %>
+            <% } %>
 
-              <table class="table table-striped">
+              <table>
                 <thead>
-                  <tr>
+                  <tr class="titulos">
                     <th scope="col">#</th>
                     <th scope="col">Marca</th>
                     <th scope="col">Modelo</th>
@@ -64,7 +56,7 @@
 
                   <% for (veiculo of veiculos) { %>
                     <tr>
-                      <th scope="row">
+                      <th class="id">
                         <%= veiculo.id %>
                       </th>
                       <td>
@@ -93,13 +85,12 @@
                       </td>
                       <td>
 
-                        <div class="row">
-                          <form class="col-auto" action="/veiculos/delete" method="post">
+                        <div class="veiculo-icons">
+                          <form action="/veiculos/delete" method="post">
                             <input type="hidden" name="id" value="<%= veiculo.id %>">
-                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                            <button class="icon" type="submit"><img src="images/x-circle 1.svg" alt=""></button>
                           </form>
-                          <a class="col-auto btn btn-info" href="/veiculos/cadastro?id=<%= veiculo.id %>"><i
-                              class="bi bi-pencil-square"></i></a>
+                          <a class="icon" href="/veiculos/cadastro?id=<%= veiculo.id %>"><img src="images/edit.svg" alt=""></a>
                         </div>
 
                       </td>
