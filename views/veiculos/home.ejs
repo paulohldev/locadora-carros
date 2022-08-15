@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <title>Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
@@ -16,7 +16,9 @@
   <div class="container">
 
     <header class="header-menu">
-      <h1>Lista de Veículos</h1>
+      <a href="/veiculos">
+        <h1>Lista de Veículos</h1>
+      </a>
       <form class="form-search" method="get" action="/veiculos/search">
         <input type="search" name="nome" placeholder="Buscar">
         <button class="btn search" type="submit">buscar</button>
@@ -24,19 +26,23 @@
       <a class="btn" href="/veiculos/cadastro">novo</a>
     </header>
 
-    <div class="veiculos">
-
-      <% if (locals.messages.success) { %>
-        <div class="alert alert-success" role="alert">
+    <% if (locals.messages.success) { %>
+      <div class="alerta sucesso" role="alert">
+        <p>
           <%= locals.messages.success %>
-        </div>
-        <% } %>
+        </p>
+      </div>
+      <% } %>
 
-          <% if (locals.messages.error) { %>
-            <div class="alert alert-danger" role="alert">
+        <% if (locals.messages.error) { %>
+          <div class="alerta erro" role="alert">
+            <p>
               <%= locals.messages.error %>
-            </div>
-            <% } %>
+            </p>
+          </div>
+          <% } %>
+
+            <div class="veiculos">
 
               <table>
                 <thead>
@@ -99,7 +105,7 @@
 
                 </tbody>
               </table>
-    </div>
+            </div>
 
   </div>
 
