@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Work+Sans:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body id="login">
+
+  <% if (message) { %>
+    <div class="alerta sucesso" role="alert">
+      <p>
+        <%= message %>
+      </p>
+    </div>
+    <% } %>
+
+      <div class="container login">
+        <div class="login-conteudo">
+          <h1>Login</h1>
+          <form action="/login" method="POST">
+
+            <div class="form-input">
+              <label for="username" name="username" id="username">Usuário</label>
+              <input type="text" name="username" id="username" placeholder="Usuário">
+            </div>
+
+            <div class="form-input">
+              <label for="password" name="password" id="password">Senha</label>
+              <input type="password" name="password" id="password" placeholder="Senha">
+            </div>
+
+            <button class="btn" type="submit">entrar</button>
+
+          </form>
+        </div>
+      </div>
+
+</body>
+
+</html>

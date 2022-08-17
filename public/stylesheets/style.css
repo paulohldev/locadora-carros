@@ -10,6 +10,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 .container {
   margin: 0 auto;
   max-width: 1200px;
@@ -193,4 +197,47 @@ form input {
 
 .form-control::-webkit-inner-spin-button {
   display: none;
+}
+
+#login {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.login label {
+  display: block;
+}
+
+.login {
+  padding: 60px;
+  border: 1px solid #feae36;
+  border-radius: 6px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  width: 620px;
+}
+
+.login-conteudo h1 {
+  font-family: "Work Sans", sans-serif;
+  font-size: 48px;
+  color: #363636;
+  margin-bottom: 30px;
+}
+
+.login-conteudo .form-input {
+  width: 300px;
+}
+
+.login-conteudo button {
+  border-radius: 6px;
+  width: fit-content;
+  border: 1px solid #feae36;
+}
+
+.login input {
+  width: 100%;
+  border-radius: 6px;
 }

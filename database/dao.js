@@ -1,6 +1,15 @@
+const { connect } = require("../routes");
 const pool = require("./config");
 
 let operations = {
+  findUserById(id) {
+    return pool.promise().query("select * from usuarios where id=?", [id]);
+  },
+  findByUsername(username) {
+    return pool
+      .promise()
+      .query("select * from usuarios where login=?", [username]);
+  },
   list: function () {
     return pool.promise().query("select * from veiculos");
   },
@@ -55,10 +64,3 @@ let operations = {
 };
 
 module.exports = operations;
-
-// pool
-//   .promise()
-//   .query("select * from veiculos")
-//   .then(([rows]) => {
-//     console.log(rows);
-//   });

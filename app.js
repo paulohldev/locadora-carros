@@ -3,8 +3,9 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-var flash = require('express-flash');
-var session = require('express-session');
+var flash = require("express-flash");
+var session = require("express-session");
+const passport = require("passport");
 
 var app = express();
 
@@ -16,19 +17,28 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use(cookieParser('chavesecreta'));
-app.use(session({ cookie: { maxAge: 60000 }}));
+app.use(cookieParser("chavesecreta"));
+app.use(session({ cookie: { maxAge: 60000 } }));
 app.use(flash());
 
 app.use(express.static(path.join(__dirname, "public")));
+app.use(
+  session({
+    secret: "notToSecret",
+    cookie: { maxAge: 2 * 60 * 1000 },
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-var veiculosRouter = require("./routes/veiculos");
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
-app.use("/veiculos", veiculosRouter);
+require("./services/auth")(passport);
+
+const { domainToASCII } = require("url");
+
+require("./routes/config")(app);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
