@@ -16,3 +16,17 @@ insert into veiculos (marca, modelo, ano, cor, categoria, combustivel, cambio, p
 ("Chevrolet","S10","2021","Azul","Picape","Diesel","Automático","SIM"),
 ("Toyota","Corolla","2022","Vermelho","Sedan","Híbrido","Automático","NÃO"),
 ("Fiat","Toro","2019","Vinho","Picape","Diesel","Automático","NÃO");
+
+create table usuarios (
+id int auto_increment primary key,
+    name varchar(255) not null,
+    login varchar(100) not null,
+    password varchar(255) not null
+);
+
+insert into usuarios (name, login, password) values
+("Paulo Henrique", "pauloo", "oi123");
+("Paulo Rubens", "prubens", "321rp")
+("Maria Fernanda", "mariaFer", "maria123"),
+("Jose Moises", "josem", "jose123"),
+("Pedro Silva", "pedros", "pedro123");
