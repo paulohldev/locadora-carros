@@ -1,4 +1,5 @@
 module.exports = function (passport) {
+  const bcrypt = require("bcryptjs");
   const operations = require("../database/dao");
   const LocalStrategy = require("passport-local").Strategy;
 
@@ -32,10 +33,10 @@ module.exports = function (passport) {
           }
 
           let user = rows[0];
-          if (user.password != password) {
-            return done(null, false);
-          } else {
+          if (bcrypt.compareSync(password, user.password)) {
             return done(null, user);
+          } else {
+            return done(null, false);
           }
         })
         .catch((err) => {

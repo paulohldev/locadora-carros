@@ -25,8 +25,9 @@ id int auto_increment primary key,
 );
 
 insert into usuarios (name, login, password) values
-("Paulo Henrique", "pauloo", "oi123");
-("Paulo Rubens", "prubens", "321rp")
+("Paulo Henrique", "pauloo", "oi123"),
+("Abc De", "abcde", "$2a$10$JzHL8isuKMDF9EcPGLmq..UXP2c2S0vrBtQDJhZnqoAIlry/yPTtm")
+("Paulo Rubens", "prubens", "321rp"),
 ("Maria Fernanda", "mariaFer", "maria123"),
 ("Jose Moises", "josem", "jose123"),
 ("Pedro Silva", "pedros", "pedro123");
